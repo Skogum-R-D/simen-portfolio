@@ -2,9 +2,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-// IMPORTANT: motion.div props are spread with (props as any) to avoid
-// TypeScript conflicts between HTMLAttributes and MotionProps.
-// Never extend MotionProps in the component interface — use this pattern as-is.
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className = "", ...props }, ref) => (
     <motion.div
