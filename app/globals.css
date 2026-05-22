@@ -30,9 +30,3 @@
   background-clip: text;
   text-fill-color: transparent;
 }
-
-.aurora-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-size: 200% 200%;
-  animation: aurora 8s ease-in-out infinite;
-}
