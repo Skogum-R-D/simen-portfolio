@@ -13,29 +13,40 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="max-w-4xl mx-auto"
-      >
-        <h2 className="text-4xl font-bold gradient-text mb-12 text-center">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <motion.section
+      id="skills"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4"
+    >
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold gradient-text text-center mb-12"
+        >
+          Skills
+        </motion.h2>
+        <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
+              key={skill}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.4 }}
             >
-              <Badge variant="secondary" className="text-sm py-1 px-3">
+              <Badge variant="secondary" className="text-sm px-4 py-1">
                 {skill}
               </Badge>
             </motion.div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 }
