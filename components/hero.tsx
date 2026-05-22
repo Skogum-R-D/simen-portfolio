@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-20">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
