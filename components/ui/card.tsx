@@ -2,6 +2,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
+// IMPORTANT: motion.div props are spread with (props as any) to avoid
+// TypeScript conflicts between HTMLAttributes and MotionProps.
+// Never extend MotionProps in the component interface — use this pattern as-is.
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className = "", ...props }, ref) => (
     <motion.div
@@ -11,7 +14,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4, boxShadow: "0 20px 40px -10px rgba(59,130,246,0.15)" }}
-      {...props}
+      {...(props as any)}
     />
   )
 );
