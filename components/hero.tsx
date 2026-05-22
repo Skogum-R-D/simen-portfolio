@@ -38,4 +38,3 @@ export default function Hero() {
     </motion.section>
   );
 }
-// Updated in feature/portfolio branch
