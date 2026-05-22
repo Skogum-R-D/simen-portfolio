@@ -7,10 +7,9 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="py-20 px-4"
     >
       <div className="max-w-4xl mx-auto">
@@ -18,32 +17,27 @@ export default function Contact() {
           <CardHeader>
             <CardTitle>Contact</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6 text-gray-300">
-            <div>
-              <h4 className="font-semibold text-white mb-2">Email</h4>
-              <a
-                href="mailto:totenvegen576a@gmail.com"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+          <CardContent>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="space-y-4"
+            >
+              <p className="text-gray-300">
+                <strong>Email:</strong> totenvegen576a@gmail.com
+              </p>
+              <p className="text-gray-300">
+                <strong>GitHub:</strong> github.com/Skogum-R-D
+              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
               >
-                totenvegen576a@gmail.com
-              </a>
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-2">GitHub</h4>
-              <a
-                href="https://github.com/Skogum-R-D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                github.com/Skogum-R-D
-              </a>
-            </div>
-            <div className="pt-4">
-              <Button size="lg" variant="secondary">
-                Get in Touch
-              </Button>
-            </div>
+                <Button variant="outline">Get in Touch</Button>
+              </motion.div>
+            </motion.div>
           </CardContent>
         </Card>
       </div>
