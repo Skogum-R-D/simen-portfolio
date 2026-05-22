@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, GitHub } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -31,7 +31,7 @@ export default function Contact() {
                 </a>
               </div>
               <div className="flex items-center space-x-4">
-                <GitHub className="h-6 w-6 text-gray-400" />
+                <Github className="h-6 w-6 text-gray-400" />
                 <a
                   href="https://github.com/Skogum-R-D"
                   target="_blank"
