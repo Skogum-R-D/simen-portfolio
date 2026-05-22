@@ -5,6 +5,9 @@
 :root {
   --background: 222 47% 5%;
   --foreground: 210 40% 98%;
+  --aurora-start: 220 80% 50%;
+  --aurora-mid: 260 80% 50%;
+  --aurora-end: 160 80% 50%;
 }
 
 body {
@@ -26,5 +29,12 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .aurora-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--aurora-start)),
+      hsl(var(--aurora-mid)),
+      hsl(var(--aurora-end)));
   }
 }
