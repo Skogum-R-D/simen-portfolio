@@ -1,51 +1,82 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { smoothScroll } from "@/lib/smooth-scroll";
 
 export default function Navbar() {
   const scrollToSection = (sectionId: string) => {
-    smoothScroll(sectionId, 80); // 80px offset to account for fixed navbar
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 glassmorphism backdrop-blur-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10"
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold gradient-text">Simen</div>
-        <div className="hidden md:flex space-x-8">
-          <button
-            onClick={() => scrollToSection("about")}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="text-xl font-bold gradient-text cursor-pointer"
+          onClick={() => scrollToSection("hero")}
+        >
+          Simen
+        </motion.div>
+        <div className="hidden md:flex space-x-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
+            onClick={() => scrollToSection("about")}
           >
             About
-          </button>
-          <button
-            onClick={() => scrollToSection("skills")}
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
+            onClick={() => scrollToSection("skills")}
           >
             Skills
-          </button>
-          <button
-            onClick={() => scrollToSection("projects")}
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
+            onClick={() => scrollToSection("projects")}
           >
             Projects
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
+            onClick={() => scrollToSection("contact")}
           >
             Contact
-          </button>
+          </motion.button>
         </div>
-        <Button variant="outline" size="sm">
-          Resume
-        </Button>
+        <div className="md:hidden">
+          <Button size="icon" variant="ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </Button>
+        </div>
       </div>
     </motion.nav>
   );
