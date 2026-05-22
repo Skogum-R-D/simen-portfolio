@@ -1,0 +1,18 @@
+/* Updated globals.css with Norwegian aurora/northern lights color palette */
+:root {
+  --aurora-blue: #1a2a6c;
+  --aurora-purple: #6b46c1;
+  --aurora-green: #38b2ac;
+  --glass-bg: rgba(26, 42, 108, 0.2);
+  --glass-border: rgba(107, 70, 193, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-purple), var(--aurora-green));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Rest of your global styles */
