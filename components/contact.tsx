@@ -1,38 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 
 export default function Contact() {
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="py-20 px-4"
-    >
-      <div className="max-w-4xl mx-auto">
-        <Card>
-          <CardHeader>
-            <CardTitle>Contact</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <p className="text-gray-300">
-                <span className="font-semibold text-white">Email:</span> totenvegen576a@gmail.com
-              </p>
-              <p className="text-gray-300">
-                <span className="font-semibold text-white">GitHub:</span> github.com/Skogum-R-D
-              </p>
-            </div>
-            <div className="pt-4">
-              <Button variant="secondary">Get in Touch</Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </motion.section>
+    <section className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="max-w-2xl mx-auto text-center"
+      >
+        <h2 className="text-4xl font-bold gradient-text mb-12">Contact</h2>
+        <div className="space-y-6">
+          <p className="text-gray-300">
+            <strong>Email:</strong> totenvegen576a@gmail.com
+          </p>
+          <p className="text-gray-300">
+            <strong>GitHub:</strong> github.com/Skogum-R-D
+          </p>
+        </div>
+        <div className="mt-12">
+          <Button variant="secondary" size="lg">
+            Get in Touch
+          </Button>
+        </div>
+      </motion.div>
+    </section>
   );
 }
