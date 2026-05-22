@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 export default function Hero() {
   return (
     <motion.section
+      id="hero"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
