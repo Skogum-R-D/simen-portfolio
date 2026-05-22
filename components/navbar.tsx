@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const scrollToSection = (sectionId: string) => {
@@ -14,10 +14,10 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10"
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="fixed top-0 left-0 right-0 z-50 glassmorphism backdrop-blur-lg"
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="text-xl font-bold gradient-text cursor-pointer"
@@ -25,7 +25,7 @@ export default function Navbar() {
         >
           Simen
         </motion.div>
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex space-x-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -59,9 +59,24 @@ export default function Navbar() {
             Contact
           </motion.button>
         </div>
-        <Button variant="outline" size="sm">
-          Resume
-        </Button>
+        <div className="md:hidden">
+          <Button size="icon" variant="ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </Button>
+        </div>
       </div>
     </motion.nav>
   );
