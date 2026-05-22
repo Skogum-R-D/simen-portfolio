@@ -15,37 +15,41 @@ export default function Skills() {
   return (
     <motion.section
       id="skills"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="py-20 px-4"
     >
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold gradient-text text-center mb-12"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-3xl font-bold gradient-text mb-8 text-center"
         >
           Skills
         </motion.h2>
-        <div className="flex flex-wrap justify-center gap-3">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ 
+            hidden: {}, 
+            show: { transition: { staggerChildren: 0.1 } } 
+          }}
+          className="flex flex-wrap justify-center gap-3"
+        >
           {skills.map((skill, index) => (
             <motion.div
-              key={skill}
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
+              key={index}
+              variants={{ 
+                hidden: { opacity: 0, y: 10 }, 
+                show: { opacity: 1, y: 0, transition: { duration: 0.5 } } 
+              }}
             >
-              <Badge variant="secondary" className="text-sm px-4 py-1">
-                {skill}
-              </Badge>
+              <Badge variant="secondary">{skill}</Badge>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
