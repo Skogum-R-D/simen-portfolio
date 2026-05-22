@@ -7,13 +7,11 @@ import Contact from '@/components/contact';
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="container mx-auto px-4 py-16 sm:py-24">
-        <Hero />
-        <About />
-        <Skills />
-        <FeaturedProject />
-        <Contact />
-      </div>
+      <Hero />
+      <About />
+      <Skills />
+      <FeaturedProject />
+      <Contact />
     </main>
   );
 }
