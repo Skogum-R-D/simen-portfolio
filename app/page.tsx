@@ -4,6 +4,7 @@ import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import Navbar from "@/components/navbar";
+import ScrollToTop from "@/components/scrollToTop";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <ScrollToTop />
     </main>
   );
 }
