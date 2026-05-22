@@ -1,26 +1,29 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
-const About = () => {
+export default function About() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto text-center"
-      >
-        <h2 className="text-4xl font-bold gradient-text mb-4">About</h2>
-        <p className="text-xl text-muted-foreground mb-8">
-          Simen builds infrastructure for AI agents that collaborate like engineering teams.
-        </p>
-        <p className="text-lg text-muted-foreground mb-6">
-          At Skogum R&D he designed and shipped a multi-agent platform where specialised AI agents (PM, Engineer, Frontend, QA, Infra) coordinate over an event bus to take a plain-language assignment and produce working, QA-validated, deployed software — with no human in the loop.
-        </p>
-      </motion.div>
-    </section>
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      id="about"
+      className="py-20 px-4"
+    >
+      <div className="max-w-4xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle>About Me</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4 text-gray-300">
+            <p>
+              Simen builds infrastructure for AI agents that collaborate like engineering teams. At Skogum R&D he designed and shipped a multi-agent platform where specialised AI agents (PM, Engineer, Frontend, QA, Infra) coordinate over an event bus to take a plain-language assignment and produce working, QA-validated, deployed software — with no human in the loop.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </motion.section>
   );
-};
-
-export default About;
+}
