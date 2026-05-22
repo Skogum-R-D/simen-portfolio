@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-const config: Config = {
+export default {
   darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -17,17 +17,20 @@ const config: Config = {
         },
       },
       animation: {
-        'aurora': 'aurora 8s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
       },
       keyframes: {
-        aurora: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        slideUp: {
+          from: { transform: 'translateY(20px)', opacity: '0' },
+          to: { transform: 'translateY(0)', opacity: '1' },
         },
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
-};
-
-export default config;
+} satisfies Config;
