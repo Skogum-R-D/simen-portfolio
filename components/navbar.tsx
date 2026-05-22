@@ -1,13 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { smoothScroll } from "@/lib/smoothScroll";
 
 export default function Navbar() {
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleScroll = (sectionId: string) => {
+    smoothScroll(sectionId, -80); // Offset for fixed navbar
   };
 
   return (
@@ -21,7 +19,7 @@ export default function Navbar() {
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="text-xl font-bold gradient-text cursor-pointer"
-          onClick={() => scrollToSection("hero")}
+          onClick={() => handleScroll("hero")}
         >
           Simen
         </motion.div>
@@ -30,7 +28,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
-            onClick={() => scrollToSection("about")}
+            onClick={() => handleScroll("about")}
           >
             About
           </motion.button>
@@ -38,7 +36,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
-            onClick={() => scrollToSection("skills")}
+            onClick={() => handleScroll("skills")}
           >
             Skills
           </motion.button>
@@ -46,7 +44,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
-            onClick={() => scrollToSection("projects")}
+            onClick={() => handleScroll("projects")}
           >
             Projects
           </motion.button>
@@ -54,7 +52,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="text-gray-300 hover:text-white transition-colors"
-            onClick={() => scrollToSection("contact")}
+            onClick={() => handleScroll("contact")}
           >
             Contact
           </motion.button>
