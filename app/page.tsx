@@ -1,11 +1,17 @@
-import { SkillsGrid } from '@/components/skills-grid';
+import Hero from '@/components/hero';
+import About from '@/components/about';
+import Skills from '@/components/skills';
+import FeaturedProject from '@/components/featured-project';
+import Contact from '@/components/contact';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground p-8 md:p-16">
-      <section className="max-w-6xl mx-auto">
-        <SkillsGrid />
-      </section>
+    <main className="min-h-screen bg-background text-foreground">
+      <Hero />
+      <About />
+      <Skills />
+      <FeaturedProject />
+      <Contact />
     </main>
   );
 }
