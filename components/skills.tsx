@@ -1,47 +1,44 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
-const skills = [
-  "Multi-agent AI systems",
-  "Python / asyncio",
-  "Next.js / TypeScript",
-  "Distributed systems (Valkey, Redis, event-driven)",
-  "DevOps (Docker, Podman, Kubernetes, CI/CD)",
-  "Mistral AI / LLM tool loops",
-];
+export default function Skills() {
+  const skills = [
+    "Multi-agent AI systems",
+    "Python / asyncio",
+    "Next.js / TypeScript",
+    "Distributed systems (Valkey, Redis, event-driven)",
+    "DevOps (Docker, Podman, Kubernetes, CI/CD)",
+    "Mistral AI / LLM tool loops",
+  ];
 
-const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto text-center"
-      >
-        <h2 className="text-4xl font-bold gradient-text mb-4">Skills</h2>
-        <p className="text-xl text-muted-foreground mb-12">
-          Technical expertise and focus areas
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skills.map((skill, index) => (
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      id="skills"
+      className="py-20 px-4"
+    >
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold gradient-text text-center mb-12">Skills</h2>
+        <div className="flex flex-wrap justify-center gap-3">
+          {skills.map((skill) => (
             <motion.div
-              key={index}
-              className="glassmorphism rounded-lg p-6 text-left"
+              key={skill}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
             >
-              <span className="text-lg font-medium">{skill}</span>
+              <Badge variant="default" className="text-sm px-4 py-1">
+                {skill}
+              </Badge>
             </motion.div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
-};
-
-export default Skills;
+}
