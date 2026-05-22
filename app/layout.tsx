@@ -1,22 +1,21 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Simen | Founder & CTO, Skogum R&D',
-  description: 'Building autonomous AI agent systems that plan, implement, and ship software end-to-end.',
+  title: "Simen - Founder & CTO, Skogum R&D",
+  description: "Building autonomous AI agent systems that plan, implement, and ship software end-to-end.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className="min-h-screen bg-[#0a0a0f] text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
