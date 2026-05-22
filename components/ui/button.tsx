@@ -29,9 +29,6 @@ const buttonVariants = cva(
   }
 );
 
-// IMPORTANT: Button does NOT use Framer Motion internally.
-// Wrap Button in <motion.div> at the call site if you need animations.
-// Mixing motion.button with asChild causes TypeScript errors — avoid it.
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
