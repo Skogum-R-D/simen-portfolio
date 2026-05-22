@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, GitHub } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -36,7 +36,7 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <GitHub className="w-6 h-6" />
+            <Github className="w-6 h-6" />
             <span>github.com/Skogum-R-D</span>
           </motion.a>
         </div>
