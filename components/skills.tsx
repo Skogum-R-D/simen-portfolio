@@ -13,7 +13,7 @@ export default function Skills() {
   ];
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
+    <section id="skills" className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
