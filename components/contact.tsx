@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
+    <section id="contact" className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
