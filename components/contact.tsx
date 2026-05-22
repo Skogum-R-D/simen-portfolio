@@ -1,31 +1,52 @@
 "use client";
 import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen flex flex-col justify-center items-center py-20 px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="max-w-2xl mx-auto text-center"
-      >
-        <h2 className="text-4xl font-bold gradient-text mb-12">Contact</h2>
-        <div className="space-y-6">
-          <p className="text-gray-300">
-            <strong>Email:</strong> totenvegen576a@gmail.com
-          </p>
-          <p className="text-gray-300">
-            <strong>GitHub:</strong> github.com/Skogum-R-D
-          </p>
-        </div>
-        <div className="mt-12">
-          <Button variant="secondary" size="lg">
-            Get in Touch
-          </Button>
-        </div>
-      </motion.div>
-    </section>
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4"
+    >
+      <div className="max-w-4xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6 text-gray-300">
+            <div>
+              <h4 className="font-semibold text-white mb-2">Email</h4>
+              <a
+                href="mailto:totenvegen576a@gmail.com"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                totenvegen576a@gmail.com
+              </a>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-2">GitHub</h4>
+              <a
+                href="https://github.com/Skogum-R-D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                github.com/Skogum-R-D
+              </a>
+            </div>
+            <div className="pt-4">
+              <Button size="lg" variant="secondary">
+                Get in Touch
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </motion.section>
   );
 }
