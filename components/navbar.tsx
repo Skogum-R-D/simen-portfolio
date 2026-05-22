@@ -1,13 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { smoothScroll } from "@/lib/smooth-scroll";
 
 export default function Navbar() {
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    smoothScroll(sectionId, 80); // 80px offset to account for fixed navbar
   };
 
   return (
