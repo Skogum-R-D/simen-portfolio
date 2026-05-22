@@ -1,7 +1,7 @@
 import Hero from '@/components/hero';
 import About from '@/components/about';
 import Skills from '@/components/skills';
-import FeaturedProject from '@/components/featured-project';
+import Projects from '@/components/projects';
 import Contact from '@/components/contact';
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
-      <FeaturedProject />
+      <Projects />
       <Contact />
     </main>
   );
