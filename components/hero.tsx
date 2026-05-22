@@ -1,34 +1,36 @@
 "use client";
 import { motion } from "framer-motion";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="min-h-screen flex flex-col justify-center items-center text-center px-4"
-    >
+    <section className="min-h-screen flex items-center justify-center p-6">
       <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="max-w-4xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-4xl"
       >
-        <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-6">
-          Simen
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-4">
-          Founder & CTO — Skogum R&D
-        </p>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-          Building autonomous AI agent systems that plan, implement, and ship software end-to-end.
-        </p>
-        <Button variant="secondary" size="lg">
-          Explore My Work
-        </Button>
+        <Card className="border border-white/10">
+          <CardHeader>
+            <CardTitle className="text-4xl font-bold">
+              Simen
+            </CardTitle>
+            <p className="text-lg text-gray-400">
+              Founder & CTO — Skogum R&D
+            </p>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xl text-gray-300 mb-6">
+              Building autonomous AI agent systems that plan, implement, and ship software end-to-end.
+            </p>
+            <Button variant="secondary" size="lg">
+              Explore My Work
+            </Button>
+          </CardContent>
+        </Card>
       </motion.div>
-    </motion.section>
+    </section>
   );
 }
