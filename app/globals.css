@@ -9,19 +9,19 @@
   --card-foreground: 210 40% 98%;
   --popover: 222 47% 5%;
   --popover-foreground: 210 40% 98%;
-  --primary: 210 40% 98%;
+  --primary: 252 100% 62%;
   --primary-foreground: 222 47% 5%;
-  --secondary: 215 32% 20%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 215 32% 20%;
-  --muted-foreground: 217 20% 60%;
-  --accent: 215 32% 20%;
-  --accent-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 5%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 20% 60%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 5%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --border: 215 32% 20%;
-  --input: 215 32% 20%;
-  --ring: 210 40% 98%;
+  --border: 215 20% 60%;
+  --input: 215 20% 60%;
+  --ring: 252 100% 62%;
   --radius: 0.5rem;
 }
 
@@ -32,19 +32,19 @@
   --card-foreground: 210 40% 98%;
   --popover: 222 47% 5%;
   --popover-foreground: 210 40% 98%;
-  --primary: 210 40% 98%;
+  --primary: 252 100% 62%;
   --primary-foreground: 222 47% 5%;
-  --secondary: 215 32% 20%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 215 32% 20%;
-  --muted-foreground: 217 20% 60%;
-  --accent: 215 32% 20%;
-  --accent-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 5%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 20% 60%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 5%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --border: 215 32% 20%;
-  --input: 215 32% 20%;
-  --ring: 210 40% 98%;
+  --border: 215 20% 60%;
+  --input: 215 20% 60%;
+  --ring: 252 100% 62%;
   --radius: 0.5rem;
 }
 
@@ -56,9 +56,15 @@
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+.aurora-gradient {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+  background-size: 200% 200%;
+  animation: aurora 8s ease-in-out infinite;
 }
