@@ -3,7 +3,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, GitHub } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -46,7 +46,7 @@ export default function Contact() {
 
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600/20 flex items-center justify-center">
-                  <GitHub className="w-5 h-5 text-purple-400" />
+                  <Github className="w-5 h-5 text-purple-400" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">GitHub</h4>
