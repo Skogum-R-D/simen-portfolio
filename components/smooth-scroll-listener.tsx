@@ -7,7 +7,7 @@ export default function SmoothScrollListener() {
     // Handle anchor link clicks for smooth scrolling
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === "A" && target.hash) {
+      if (target instanceof HTMLAnchorElement && target.hash) {
         e.preventDefault();
         const sectionId = target.hash.substring(1); // Remove the #
         smoothScroll(sectionId, 80); // 80px offset for navbar
