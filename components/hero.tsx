@@ -5,16 +5,16 @@ import { Button } from "./ui/button";
 export default function Hero() {
   return (
     <motion.section
-      id="hero"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="min-h-screen flex flex-col justify-center items-center text-center px-4"
     >
       <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="mb-6"
       >
         <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-4">
           Simen
@@ -27,10 +27,9 @@ export default function Hero() {
         </p>
       </motion.div>
       <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="mt-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
       >
         <Button size="lg" variant="secondary">
           Explore My Work
