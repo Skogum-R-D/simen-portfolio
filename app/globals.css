@@ -5,47 +5,15 @@
 :root {
   --background: 222 47% 5%;
   --foreground: 210 40% 98%;
-  --card: 222 47% 5%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222 47% 5%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 252 100% 62%;
+  --primary: 252 95% 53%;
   --primary-foreground: 222 47% 5%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 5%;
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --ring: 252 100% 62%;
-  --radius: 0.5rem;
 }
 
 .dark {
   --background: 222 47% 5%;
   --foreground: 210 40% 98%;
-  --card: 222 47% 5%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222 47% 5%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 252 100% 62%;
+  --primary: 252 95% 53%;
   --primary-foreground: 222 47% 5%;
-  --secondary: 217 33% 17%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62% 45%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --ring: 252 100% 62%;
-  --radius: 0.5rem;
 }
 
 .glassmorphism {
@@ -56,14 +24,15 @@
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-fill-color: transparent;
 }
 
-.aurora-bg {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+.aurora-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-size: 200% 200%;
   animation: aurora 8s ease-in-out infinite;
 }
